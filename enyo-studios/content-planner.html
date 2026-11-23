@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Planner — Enya Studios</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="content-planner" data-nav="resources" data-min-tier="2" data-chat>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="container page-head">
+      <p class="eyebrow">Resources</p>
+      <h1 class="h1" style="color:var(--taupe)">Enya Studio Content System</h1>
+      <p class="lede">Plan, generate and schedule your brand content in one workspace.</p>
+    </section>
+
+    <!-- AI CONTENT STRATEGIST -->
+    <section class="container section--tight">
+      <div class="card">
+        <h2 class="h3" style="margin-bottom:.3rem">AI Content Strategist</h2>
+        <p class="muted" style="margin-bottom:1.4rem">Generate hooks, scripts, captions and hashtags when you&rsquo;re stuck.</p>
+        <form class="strategist" id="genForm">
+          <div class="field">
+            <label for="genPrompt">What do you need?</label>
+            <textarea class="textarea" id="genPrompt" maxlength="600" placeholder="&ldquo;I need 7 TikTok ideas for a streetwear drop&rdquo;&#10;&ldquo;I'm pre-launch and need hype content&rdquo;&#10;&ldquo;Give me founder story TikTok ideas&rdquo;"></textarea>
+          </div>
+          <div class="row-4">
+            <div class="field"><label for="genStage">Stage of brand</label>
+              <select class="select" id="genStage"><option>Pre-launch</option><option>Launch Week</option><option>Scaling</option></select></div>
+            <div class="field"><label for="genPlatform">Platform</label>
+              <select class="select" id="genPlatform"><option>Instagram</option><option>TikTok</option><option>YouTube Shorts</option></select></div>
+            <div class="field"><label for="genFormat">Format</label>
+              <select class="select" id="genFormat"><option>Talking to camera</option><option>BTS vlog</option><option>Styling video</option></select></div>
+            <div class="field"><label for="genStyle">Output style</label>
+              <select class="select" id="genStyle"><option>Full Script</option><option>Hook Only</option><option>Caption + Hashtags</option></select></div>
+          </div>
+          <div class="actions" style="align-items:center;gap:14px;flex-wrap:wrap">
+            <span class="small muted" id="genStatus"></span>
+            <button class="btn" type="submit" id="genBtn">Generate content <span data-icon="sparkle"></span></button>
+          </div>
+        </form>
+        <div class="ai-out" id="genOut" hidden>
+          <div class="ai-out-head"><span>Your content</span><button type="button" class="small-btn" id="genCopy">Copy</button></div>
+          <div id="genText"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT CALENDAR -->
+    <section class="container section" style="padding-top:clamp(24px,4vw,48px)">
+      <h2 class="h2" style="margin-bottom:.4rem">Your content calendar</h2>
+      <p class="muted" style="margin-bottom:1.6rem">A clean schedule board where you map out your posting calendar. Click a day to add a post.</p>
+
+      <div class="cal-head">
+        <div class="left">
+          <button type="button" class="small-btn" id="filterBtn" aria-expanded="false" aria-controls="calFilters"><span data-icon="filter"></span> Filters</button>
+          <div class="seg" role="group" aria-label="Calendar view">
+            <button type="button" id="vMonth" aria-pressed="true">Month</button>
+            <button type="button" id="vList" aria-pressed="false">List</button>
+          </div>
+        </div>
+        <div class="right">
+          <button type="button" class="small-btn" id="addPostBtn"><span data-icon="plus"></span> Add post</button>
+          <button type="button" class="small-btn" id="calToday">Today</button>
+          <button type="button" class="small-btn" id="calPrev" aria-label="Previous month"><span data-icon="chevronLeft"></span></button>
+          <span class="cal-title" id="calTitle" aria-live="polite"></span>
+          <button type="button" class="small-btn" id="calNext" aria-label="Next month"><span data-icon="chevronRight"></span></button>
+        </div>
+      </div>
+      <div class="cal-filters" id="calFilters" hidden></div>
+      <div class="cal" id="calBox"></div>
+      <div class="legend" id="calLegend"></div>
+    </section>
+
+    <dialog id="postDialog" aria-labelledby="dlgTitle">
+      <form id="postForm">
+        <h2 id="dlgTitle">Add post</h2>
+        <div class="field"><label for="pDate">Date</label><input class="input" id="pDate" type="date" required></div>
+        <div class="field"><label for="pPlatform">Platform</label><select class="select" id="pPlatform"></select></div>
+        <div class="field"><label for="pTitle">What&rsquo;s the post?</label><input class="input" id="pTitle" required maxlength="80" placeholder="e.g. Behind the scenes at the sampling stage"></div>
+        <div class="field"><label for="pNotes">Notes (optional)</label><textarea class="textarea" id="pNotes" style="min-height:80px" maxlength="500"></textarea></div>
+        <div class="row">
+          <button type="button" class="btn btn--ghost btn--sm" id="pDelete" hidden>Delete</button>
+          <button type="button" class="btn btn--ghost btn--sm" id="pCancel">Cancel</button>
+          <button type="submit" class="btn btn--sm">Save</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/social-icons.js"></script>
+  <script src="data/plans.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>
