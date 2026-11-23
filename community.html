@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community — Enya Studios</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="community" data-nav="community" data-min-tier="2" data-chat>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="container page-head">
+      <p class="eyebrow">Community</p>
+      <h1 class="h1" style="color:var(--taupe)">Enya Studio Circle</h1>
+      <p class="lede">A private space where members post questions, share work in progress and get opinions from other fashion founders.</p>
+      <div class="notice" id="previewNote" role="status">
+        <span data-icon="lock"></span>
+        <div><b>Preview mode</b><p>The Circle lives right here on the site, but for now posts are saved in this browser only. Other members can&rsquo;t see them yet. Sharing posts between members needs the member database to be switched on.</p></div>
+      </div>
+    </section>
+
+    <section class="container section--tight">
+      <div class="circle">
+        <aside class="circle-side" aria-label="Community channels">
+          <h2 class="label-caps muted" style="margin:0 0 .7rem">Channels</h2>
+          <nav class="chan-list" id="channels"></nav>
+          <h2 class="label-caps muted" style="margin:1.8rem 0 .7rem">Founder directory</h2>
+          <div id="directory"></div>
+        </aside>
+
+        <div class="circle-main">
+          <div id="feedView">
+            <div class="circle-bar">
+              <div>
+                <h2 class="h2" id="chName"></h2>
+                <p class="muted" id="chDesc" style="margin:.3rem 0 0"></p>
+              </div>
+              <div class="circle-actions">
+                <button type="button" class="btn btn--ghost btn--sm" id="loadSamples" hidden>Load sample posts</button>
+                <button type="button" class="btn" id="newPost"><span data-icon="plus"></span> New post</button>
+              </div>
+            </div>
+            <div id="feed" aria-live="polite"></div>
+          </div>
+
+          <div id="threadView" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <dialog id="postDialog" aria-labelledby="pdTitle">
+      <form id="postForm">
+        <h2 id="pdTitle">New post</h2>
+        <div class="field"><label for="pdChannel">Channel</label><select class="select" id="pdChannel"></select></div>
+        <div class="field"><label for="pdTitleInput">Title</label><input class="input" id="pdTitleInput" required minlength="3" maxlength="100" placeholder="e.g. Sample came back with the wrong waistband"></div>
+        <div class="field"><label for="pdBody">What do you want to share or ask?</label><textarea class="textarea" id="pdBody" required maxlength="2000" style="min-height:140px"></textarea></div>
+        <div class="row">
+          <button type="button" class="btn btn--ghost btn--sm" id="pdCancel">Cancel</button>
+          <button type="submit" class="btn btn--sm">Post</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/social-icons.js"></script>
+  <script src="data/plans.js"></script>
+  <script src="data/community.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/community.js"></script>
+</body>
+</html>

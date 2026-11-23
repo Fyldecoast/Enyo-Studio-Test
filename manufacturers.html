@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manufacturer Vetting Guide — Enya Studios</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="manufacturers" data-nav="resources" data-min-tier="1" data-chat>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="container page-head">
+      <p class="eyebrow">Resources</p>
+      <h1 class="h1" style="color:var(--taupe)">Manufacturer Vetting Guide</h1>
+      <p class="lede">Find, evaluate and secure the right production partner for your brand. This guide gives you the framework to source, vet, negotiate and scale with the right manufacturing partner.</p>
+    </section>
+
+
+    <!-- CORE MANUFACTURER SNAPSHOT: shown to The Independent Founder (plan 1) only.
+         Studio Pro and above get the live directory further down instead. -->
+    <section class="container section--tight" id="snapshot" hidden>
+      <p class="eyebrow">Core Manufacturer Snapshot</p>
+      <h2 class="h2" style="margin-bottom:.8rem">Your starter list of vetted factories</h2>
+      <p class="lede" style="margin-bottom:1.4rem">A foundational list to start your sourcing, included with The Independent Founder. The Studio Pro adds the live, constantly updated directory with factory contacts, location tags and cold-outreach templates.</p>
+      <div class="snap-wrap"><table class="snap" id="snapTable"><caption class="sr-only">Starter list of vetted apparel factories</caption></table></div>
+      <p style="margin-top:1.2rem;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <button type="button" class="btn btn--sm" id="snapDownload">Download snapshot (CSV) <span data-icon="download"></span></button>
+        <span class="small muted" id="snapDate"></span>
+      </p>
+    </section>
+
+    <!-- Everything below needs The Studio Pro (plan 2) -->
+    <div data-tier-gate="2" data-gate-title="The live directory, vetting guide and outreach templates are part of The Studio Pro">
+
+    <!-- 1. TYPES -->
+    <section class="container section--tight">
+      <h2 class="h2" style="margin-bottom:1.6rem">Understanding manufacturer types</h2>
+      <div class="grid grid-2" id="mfTypes"></div>
+    </section>
+
+    <!-- 2. FRAMEWORK -->
+    <section class="container section">
+      <div class="sec-head">
+        <h2>Vetting framework</h2>
+        <button type="button" class="small-btn" id="toggleAll" data-open="false">Expand all</button>
+      </div>
+      <div class="accordion" id="framework"></div>
+      <div class="callout vet-note" id="vetNote" hidden></div>
+    </section>
+
+    <!-- 3. DIRECTORY -->
+    <section class="container section section--line">
+      <div class="sec-head">
+        <h2>Curated manufacturer database</h2>
+        <div class="tabs" id="mfTabs" role="group" aria-label="Filter by category"></div>
+      </div>
+      <div class="grid grid-3" id="mfGrid"></div>
+      <p class="small muted" style="margin-top:1.2rem">MOQs and details change. Confirm everything directly with the factory before you order.</p>
+    </section>
+
+    <!-- 4. HOW TO FIND A SUPPLIER -->
+    <section class="container section section--line">
+      <div class="grid grid-2" style="gap:clamp(24px,5vw,72px);align-items:start">
+        <div>
+          <h2 class="h2" style="margin-bottom:1.6rem">How to find any brand&rsquo;s supplier</h2>
+          <ol class="how-steps" id="findSteps"></ol>
+        </div>
+        <div>
+          <h2 class="h2" style="margin-bottom:1.6rem">Outreach template</h2>
+          <div class="template-box">
+            <header><span>Email to a factory</span><button type="button" class="small-btn" id="copyBtn">Copy template</button></header>
+<pre id="outreach"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SAMPLE EVALUATION CHECKLIST -->
+    <section class="container section section--line">
+      <h2 class="h2" style="margin-bottom:.8rem">Sample evaluation checklist</h2>
+      <p class="lede" style="margin-bottom:1.8rem">Use this when your pre-production sample arrives. Go through every item before approving bulk. What you accept in the sample is what you&rsquo;ll get on the production line.</p>
+      <div class="eval-grid" id="evalGrid"></div>
+      <div style="margin-top:1rem"><button type="button" class="btn btn--ghost btn--sm" id="evalReset">Clear checklist</button></div>
+
+      <!-- Keep this disclaimer true. If you ever earn referral fees from a factory, update it. -->
+      <p class="disclaimer">These manufacturers are recommended as a starting point, not a guarantee. Production is a relationship, and what works for one brand may not work for another. Always do your own research to confirm the information is up to date, request samples, verify certifications and make sure each factory is the right fit for your brand before placing a bulk order. Enya Studios is not affiliated with any of the manufacturers listed and does not receive referral fees from them.</p>
+    </section>
+    </div><!-- /data-tier-gate -->
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/social-icons.js"></script>
+  <script src="data/plans.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/manufacturers.js"></script>
+</body>
+</html>
